@@ -5,10 +5,10 @@
 | name               | string | null: false               |
 | email              | string | null: false, unipue: true |
 | encrypted_password | string | null: false               |
-| First_name         | string | null: false               |
-| Last_name          | string | null: false               |
-| First_name_kana    | string | null: false               |
-| Last_name_kana     | string | null: false               |
+| first_name         | string | null: false               |
+| last_name          | string | null: false               |
+| first_name_kana    | string | null: false               |
+| last_name_kana     | string | null: false               |
 | birth_date         | date   | null: false               |
 
 ### Association
@@ -54,11 +54,11 @@
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
 | postal_code_id     | integer    | null: false                    |
-| prefecture-id      | integer    | null: false                    |
+| prefecture_id      | integer    | null: false                    |
 | adress             | string     | null: false                    |
 | building_name      | string     |                     |
 | phone_number       | string     | null: false                    |
-| purchased_items    | references | null: false, foregin_key: true |
+| purchased_item    | references | null: false, foregin_key: true |
 
 ### Association
 - belongs_to :purchased_item
