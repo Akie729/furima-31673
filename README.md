@@ -29,7 +29,7 @@
 | prefecture_id   | integer    | null: false                    |
 | days_to_ship_id | integer    | null: false                    |
 | price           | integer    | null: false                    |
-| user_id         | references | null: false, foregin_key: true |
+| user            | references | null: false, foregin_key: true |
 
 ### Association
 - belongs_to :user
@@ -40,8 +40,8 @@
 
 | Column    | Type       | Options                        |
 | --------- | ---------- | ------------------------------ |
-| user_id   | references | null: false, foregin_key: true |
-| item_id   | references | null: false, foregin_key: true |
+| user      | references | null: false, foregin_key: true |
+| item      | references | null: false, foregin_key: true |
 
 ### Association
 - belongs_to :item
@@ -58,7 +58,7 @@
 | adress             | string     | null: false                    |
 | building_name      | string     |                     |
 | phone_number       | string     | null: false                    |
-| purchased_items_id | references | null: false, foregin_key: true |
+| purchased_items    | references | null: false, foregin_key: true |
 
 ### Association
 - belongs_to :purchased_item
