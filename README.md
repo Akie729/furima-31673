@@ -36,7 +36,7 @@
 - has_one :purcased_item
 
 
-## purchased_items テーブル
+## ordersテーブル
 
 | Column    | Type       | Options                        |
 | --------- | ---------- | ------------------------------ |
