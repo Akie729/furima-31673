@@ -64,3 +64,5 @@ end
 gem 'devise'
 gem 'pry-rails'
 gem 'gimei'
+gem 'rubocop', require: false
+gem 'rubocop-rails'
