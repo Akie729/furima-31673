@@ -13,8 +13,18 @@
 ActiveRecord::Schema.define(version: 2020_11_13_101627) do
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "description", null: false
+    t.integer "category_id", null: false
+    t.integer "condition_id", null: false
+    t.integer "delivary_fee_id", null: false
+    t.integer "prefecture_id", null: false
+    t.integer "days_to_ship_id", null: false
+    t.integer "price", null: false
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_images_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
