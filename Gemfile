@@ -66,3 +66,6 @@ gem 'pry-rails'
 gem 'gimei'
 gem 'rubocop', require: false
 gem 'rubocop-rails'
+
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
