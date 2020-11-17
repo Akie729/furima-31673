@@ -15,6 +15,7 @@ class Item < ApplicationRecord
     validates :delivary_fee_id
     validates :days_to_ship_id
     validates :prefecture_id
+    validates :price
   end
 
   with_options numericality: { other_than: 1 } do
@@ -24,4 +25,7 @@ class Item < ApplicationRecord
     validates :days_to_ship_id
     validates :prefecture_id
   end
+
+  belongs_to :user
+  has_one_attached :image
 end

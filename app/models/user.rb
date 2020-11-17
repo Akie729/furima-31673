@@ -7,9 +7,6 @@ class User < ApplicationRecord
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
   validates :password, presence: true, length: { minimum: 6 }, format: { with: VALID_PASSWORD_REGEX, message: 'は英数字混合で入力してください' }
 
-  # VALID_EMAIL_REGEX = /\A[^@\s]+@[^@\s]+\z/.freeze
-  # validates :email, presence: true, format: { with: VALID_EMAIL_REGEX, message: 'は@が含まれていることが必要です' }
-
   with_options presence: true do
     validates :name
     validates :birth_date
@@ -24,4 +21,6 @@ class User < ApplicationRecord
     validates :first_name_kana
     validates :last_name_kana
   end
+
+  has_many :items
 end
