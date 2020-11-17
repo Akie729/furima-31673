@@ -28,7 +28,7 @@
       <p class='or-text'>or</p>
       <%= link_to '削除', "#", method: :delete, class:'item-destroy' %>
     
-    <% elsif user_signed_in? && current_user.id != @item.user_id%>
+    <% else %>
       <div class="item-explain-box">
         <span><%= @item.description %></span>
       </div>
@@ -70,53 +70,11 @@
           <span>不適切な商品の通報</span>
         </div>
       </div>
-
+      <% if user_signed_in?%>
       <%# 商品が売れていない場合はこちらを表示しましょう %>
-      <%= link_to '購入画面に進む', "#" ,class:"item-red-btn"%>
+      <%= link_to '購入画面に進む', "#" ,class:"item-red-btn" %>
       <%# //商品が売れていない場合はこちらを表示しましょう %> 
-      
-    <% else %>
-    <div class="item-explain-box">
-        <span><%= @item.description %></span>
-      </div>
-      <table class="detail-table">
-        <tbody>
-          <tr>
-            <th class="detail-item">出品者</th>
-            <td class="detail-value"><%= "出品者名" %></td>
-          </tr>
-          <tr>
-            <th class="detail-item">カテゴリー</th>
-            <td class="detail-value"><%= @item.category.name %></td>
-          </tr>
-          <tr>
-            <th class="detail-item">商品の状態</th>
-            <td class="detail-value"><%= @item.condition.name %></td>
-          </tr>
-          <tr>
-            <th class="detail-item">配送料の負担</th>
-            <td class="detail-value"><%= @item.delivary_fee.name %></td>
-          </tr>
-          <tr>
-            <th class="detail-item">発送元の地域</th>
-            <td class="detail-value"><%= @item.prefecture.name %></td>
-          </tr>
-          <tr>
-            <th class="detail-item">発送日の目安</th>
-            <td class="detail-value"><%= @item.days_to_ship.name %></td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="option">
-        <div class="favorite-btn">
-          <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-          <span>お気に入り 0</span>
-        </div>
-        <div class="report-btn">
-          <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
-          <span>不適切な商品の通報</span>
-        </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
    
