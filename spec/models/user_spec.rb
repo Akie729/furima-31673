@@ -107,7 +107,7 @@ RSpec.describe User, type: :model do
       it 'ユーザー名前のフリガナは、全角（カタカナ）でないと新規登録できない' do
         @user.first_name_kana = 'あき'
         @user.valid?
-        expect(@user.errors.full_messages).to include('First name kana は全角カタカナで入力してください' )
+        expect(@user.errors.full_messages).to include('First name kana は全角カタカナで入力してください')
       end
 
       it '生年月日が空だと新規登録できない' do

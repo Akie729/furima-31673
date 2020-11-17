@@ -6,11 +6,11 @@ class Item < ApplicationRecord
   belongs_to_active_hash :days_to_ship
   belongs_to_active_hash :prefecture
 
-  validates :price, numericality: { 
-               only_integer: true, 
-               greater_than: 300, 
-               less_than_or_equal_to: 9999999
-              }
+  validates :price, numericality: {
+    only_integer: true,
+    greater_than: 300,
+    less_than_or_equal_to: 9_999_999
+  }
   validates :price, format: { with: /\A[0-9]+\z/ }
 
   with_options presence: true do
