@@ -23,12 +23,11 @@
     </div>
 
     <% if user_signed_in? && current_user.id == @item.user_id %>
-
       <%= link_to '商品の編集', "#", method: :get, class: "item-red-btn" %>
       <p class='or-text'>or</p>
       <%= link_to '削除', "#", method: :delete, class:'item-destroy' %>
-    
-    <% else %>
+    <% end %>
+
       <div class="item-explain-box">
         <span><%= @item.description %></span>
       </div>
@@ -36,7 +35,7 @@
         <tbody>
           <tr>
             <th class="detail-item">出品者</th>
-            <td class="detail-value"><%= "出品者名" %></td>
+            <td class="detail-value"><%= @item.user.name %></td>
           </tr>
           <tr>
             <th class="detail-item">カテゴリー</th>
@@ -70,12 +69,13 @@
           <span>不適切な商品の通報</span>
         </div>
       </div>
+
       <% if user_signed_in?%>
       <%# 商品が売れていない場合はこちらを表示しましょう %>
       <%= link_to '購入画面に進む', "#" ,class:"item-red-btn" %>
       <%# //商品が売れていない場合はこちらを表示しましょう %> 
       <% end %>
-    <% end %>
+
   </div>
    
 
@@ -101,7 +101,7 @@
       後ろの商品 ＞
     </a>
   </div>
-  <a href="#" class='another-item'><%= "商品のカテゴリー名" %>をもっと見る</a>
+  <a href="#" class='another-item'><%= @item.category.name %>をもっと見る</a>
 </div>
 
 <%= render "shared/footer" %>
