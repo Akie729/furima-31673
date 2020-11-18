@@ -23,7 +23,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = @item = Item.find(params[:id])
+    @item = Item.find(params[:id])
   end
 
   private
