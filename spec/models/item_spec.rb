@@ -30,33 +30,33 @@ RSpec.describe Item, type: :model do
       end
 
       it 'categoryは１を選択したら保存できない' do
-        @item.category_id = "1"
+        @item.category_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category must be other than 1")
+        expect(@item.errors.full_messages).to include('Category must be other than 1')
       end
 
       it 'conditionは１を選択したら保存できない' do
-        @item.condition_id = "1"
+        @item.condition_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Condition must be other than 1")
+        expect(@item.errors.full_messages).to include('Condition must be other than 1')
       end
 
       it 'delivary_feeは１を選択したら保存できない' do
-        @item.delivary_fee_id = "1"
+        @item.delivary_fee_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Delivary fee must be other than 1")
+        expect(@item.errors.full_messages).to include('Delivary fee must be other than 1')
       end
 
       it 'days_to_shipがは１を選択したら保存できない' do
-        @item.days_to_ship_id = "1"
+        @item.days_to_ship_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Days to ship must be other than 1")
+        expect(@item.errors.full_messages).to include('Days to ship must be other than 1')
       end
 
       it 'prefectureは１を選択したら保存できない' do
-        @item.prefecture_id = "1"
+        @item.prefecture_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Prefecture must be other than 1")
+        expect(@item.errors.full_messages).to include('Prefecture must be other than 1')
       end
 
       it 'priceが入力されていないと保存できない' do
