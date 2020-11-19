@@ -7,7 +7,7 @@ class CreateAdresses < ActiveRecord::Migration[6.0]
       t.integer :house_number, null: false
       t.integer :building_name
       t.string :phone_number, null: false
-      t.references :order_item, foregin_key: true
+      t.references :order, foregin_key: true
 
       t.timestamps
     end
