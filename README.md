@@ -55,11 +55,11 @@
 | ------------------ | ---------- | ------------------------------ |
 | postal_code_id     | integer    | null: false                    |
 | prefecture_id      | integer    | null: false                    |
-| municipality       | string     | null: false                    |
-| adress             | string     | null: false                    |
+| city               | string     | null: false                    |
+| house_number       | string     | null: false                    |
 | building_name      | string     |                     |
 | phone_number       | string     | null: false                    |
-| purchased_item     | references | null: false, foregin_key: true |
+| order_item         | references | null: false, foregin_key: true |
 
 ### Association
 - belongs_to :order
