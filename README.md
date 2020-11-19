@@ -13,7 +13,7 @@
 
 ### Association
 - has_many :items
-- has_many :purchased_items
+- has_many :orders
 
 
 
@@ -33,7 +33,7 @@
 
 ### Association
 - belongs_to :user
-- has_one :purcased_item
+- has_one :order
 
 
 ## ordersテーブル
@@ -62,5 +62,5 @@
 | purchased_item     | references | null: false, foregin_key: true |
 
 ### Association
-- belongs_to :purchased_item
+- belongs_to :order
 
