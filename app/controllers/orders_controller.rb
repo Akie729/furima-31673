@@ -1,10 +1,16 @@
 class OrdersController < ApplicationController
 
   def index
-    @order = Order.new
+    @orderform = OrderForm.new
   end
 
+
   def create
-    Order.create
+    @orderform = OrderForm.create(order_params)
+  end
+
+  private
+  def order_params
+    params.require(:orderform).permit(:user_id, :item_id, :postal_code, :prefecture_id, :city, :house_number, :building_name, :phone).merge(user_id: current_user.id, item_id: item.id)
   end
 end
