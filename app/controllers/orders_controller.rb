@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
 
   def index
     @orderform = OrderForm.new
+    @item = Item.find(params[:item_id])
   end
 
 
