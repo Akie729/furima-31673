@@ -13,7 +13,7 @@
 
 ### Association
 - has_many :items
-- has_many :purchased_items
+- has_many :orders
 
 
 
@@ -33,7 +33,7 @@
 
 ### Association
 - belongs_to :user
-- has_one :purcased_item
+- has_one :order
 
 
 ## ordersテーブル
@@ -53,14 +53,14 @@
 
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
-| postal_code_id     | integer    | null: false                    |
+| postal_code        | integer    | null: false                    |
 | prefecture_id      | integer    | null: false                    |
-| municipality       | string     | null: false                    |
-| adress             | string     | null: false                    |
-| building_name      | string     |                     |
-| phone_number       | string     | null: false                    |
-| purchased_item     | references | null: false, foregin_key: true |
+| city               | string     | null: false                    |
+| house_number       | string     | null: false                    |
+| building_name      | string     |                                |
+| phone              | string     | null: false                    |
+| order              | references | null: false, foregin_key: true |
 
 ### Association
-- belongs_to :purchased_item
+- belongs_to :order
 
