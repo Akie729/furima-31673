@@ -1,8 +1,8 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, only: :index
+  before_action :item_find, only: [:index, :create]
   before_action :move_to_root_path, only: :index
   before_action :sold_out_item, only: [:index]
-  before_action :item_find, only: [:index, :create]
 
   def index
     @orderform = OrderForm.new
@@ -39,12 +39,10 @@ class OrdersController < ApplicationController
   end
 
   def move_to_root_path
-    @item = Item.find(params[:item_id])
     redirect_to root_path if user_signed_in? && current_user.id == @item.user_id
   end
 
   def sold_out_item
-    @item = Item.find(params[:item_id])
     redirect_to root_path if @item.order.present?
   end
 end
